@@ -1,0 +1,23 @@
+﻿@page
+@model ReadFromFactoryAndSaveCSV.Pages.ProductsModel
+@{
+}
+
+<table class="table table-striped">
+    <tr>
+        <th>Name</th>
+        <th>Id</th>
+        <th>Unit</th>
+        <th>Save to CSV</th>
+    </tr>
+    @foreach (var item in Model.Products)
+    {
+        <tr>
+            <td>@item.prod_name</td>
+            <td>@item.prod_id</td>
+            <td>@item.prod_unit</td>
+            <td><a href="/GetProduct?productId=@item.prod_id" target="_blank">Add to CSV</a></td>
+        </tr>
+
+    }
+</table>
